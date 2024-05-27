@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-27T11:20:39.738Z",
+    "end": "2024-05-27T11:20:47.696Z",
+    "duration": 7958,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bdc45cac-57b7-4138-ab34-c5534baea731",
+      "title": "",
+      "fullFile": "cypress/e2e/TestCases.cy.js",
+      "file": "cypress/e2e/TestCases.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c25d4839-a60c-44ae-9c2d-782fc3195b2a",
+          "title": "Register New User",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Checking the New Account Signup Process",
+              "fullTitle": "Register New User Checking the New Account Signup Process",
+              "timedOut": null,
+              "duration": 5019,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://automationteststore.com/index.php?rt=account/create');\ncy.get(\"#AccountFrm_firstname\").type('Kim');\ncy.get(\"#AccountFrm_lastname\").type('Kai');\ncy.get(\"#AccountFrm_email\").type(randomEmail);\ncy.get(\"#AccountFrm_telephone\").type('4724044421');\ncy.get(\"#AccountFrm_fax\").type('4724044421');\ncy.get(\"#AccountFrm_company\").type('Test Automation');\ncy.get(\"#AccountFrm_address_1\").type('Rådhusgata 12');\ncy.get(\"#AccountFrm_city\").type('London');\ncy.get(\"#AccountFrm_zone_id\").select('Somerset');\ncy.get(\"#AccountFrm_postcode\").type('3591');\ncy.get(\"#AccountFrm_loginname\").type(randomUsername);\ncy.get(\"#AccountFrm_password\").type('kimKai1994@');\ncy.get(\"#AccountFrm_confirm\").type('kimKai1994@');\ncy.get(\"#AccountFrm_newsletter0\").click();\ncy.get(\"#AccountFrm_agree\").click();\ncy.get('button[title=\"Continue\"]').click();\ncy.contains('span.maintext', 'Your Account Has Been Created!').should('be.visible');",
+              "err": {},
+              "uuid": "5a267ef1-2923-473f-9e4f-91aca3434e39",
+              "parentUUID": "c25d4839-a60c-44ae-9c2d-782fc3195b2a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Account Creation Success",
+              "fullTitle": "Register New User Verify Account Creation Success",
+              "timedOut": null,
+              "duration": 1166,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://automationteststore.com/index.php?rt=account/login');\ncy.get(\"#loginFrm_loginname\").type(randomUsername);\ncy.get(\"#loginFrm_password\").type('kimKai1994@');\ncy.get('button[title=\"Login\"]').click();\ncy.contains('span.maintext', 'My Account').should('be.visible');\ncy.contains('span.subtext', 'Kim').should('be.visible');\ncy.get('i.fa.fa-book').should('exist').and('be.visible');\ncy.get('i.fa.fa-briefcase').should('exist').and('be.visible');\ncy.get('i.fa.fa-cloud-download').should('exist').and('be.visible');\ncy.get('i.fa.fa-money').should('exist').and('be.visible');",
+              "err": {},
+              "uuid": "8d7657f4-f74b-4ca7-8cfa-c0e1b1b36e99",
+              "parentUUID": "c25d4839-a60c-44ae-9c2d-782fc3195b2a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5a267ef1-2923-473f-9e4f-91aca3434e39",
+            "8d7657f4-f74b-4ca7-8cfa-c0e1b1b36e99"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6185,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
